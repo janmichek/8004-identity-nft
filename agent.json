@@ -1,1 +1,22 @@
-{}
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004 registration-v1",
+  "name": "Planet Vinyt",
+  "description": "A pixel-art planet vinyl and on-chain agent.",
+  "image": "https://violet-kind-canidae-922.mypinata.cloud/ipfs/bafkreih7lolgx6x6ze2hh3oupbob2aqhdupukw5khthobgelk2u4cmkwea",
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://janmichek.cz"
+    },
+    {
+      "name": "email",
+      "endpoint": "jan@janmichek.fun"
+    }
+  ],
+  "x402Support": false,
+  "active": true,
+  "registrations": [],
+  "supportedTrust": [
+    "reputation"
+  ]
+}

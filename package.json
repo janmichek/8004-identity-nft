@@ -1,11 +1,8 @@
 {
-  "name": "8004-customized-nft",
+  "name": "8004-identity-nft",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Mint an ERC-8004 agent identity NFT on Mantle Sepolia — demo for https://www.youtube.com/watch?v=tj4U2vEDQH4",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "setup": "mkdir -p scripts && npm pkg set type=module && npm install --save-dev hardhat ethers dotenv @nomicfoundation/hardhat-ethers && printf 'import \"@nomicfoundation/hardhat-ethers\";\\nimport \"dotenv/config\";\\nexport default { solidity: \"0.8.24\" };\\n' > mint-8004/hardhat.config.js && printf '{}\\n' > mint-8004/agent.json && touch mint-8004/.env && printf 'import { ethers } from \"hardhat\";\\n' > mint-8004/scripts/mint-agent.js && echo \"mint-8004 scaffolded in ./mint-8004\"",
     "mint": "hardhat run scripts/mint-agent.js --network mantleSepolia"
   },
   "private": true,

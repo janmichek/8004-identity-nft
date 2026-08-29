@@ -105,9 +105,11 @@ import { ethers } from "hardhat";
 Run:
 
 ```bash
-npx hardhat run scripts/mint-agent.js --network mantleSepolia
+npm run mint
 # → Agent ID 45 — https://sepolia.mantlescan.xyz/token/0x...?a=45
 ```
+
+Equivalent to `npx hardhat run scripts/mint-agent.js --network mantleSepolia` (see `package.json:9`).
 
 Verify on [Mantle Sepolia Explorer](https://sepolia.mantlescan.xyz) — token shows 8004 metadata and image from Pinata.
 

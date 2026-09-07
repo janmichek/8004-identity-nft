@@ -1,16 +1,10 @@
 {
   "name": "8004-identity-nft",
   "version": "1.0.0",
-  "description": "Mint an ERC-8004 agent identity NFT on Mantle Sepolia — demo for https://www.youtube.com/watch?v=tj4U2vEDQH4",
+  "description": "Mint an ERC-8004 agent identity NFT on Mantle Sepolia",
   "scripts": {
-    "mint": "hardhat run scripts/mint-agent.js --network mantleSepolia"
+    "mint": "forge script script/MintAgent.s.sol --rpc-url mantleSepolia --broadcast"
   },
   "private": true,
-  "type": "module",
-  "devDependencies": {
-    "@nomicfoundation/hardhat-ethers": "^4.0.15",
-    "dotenv": "^17.4.2",
-    "ethers": "^6.17.0",
-    "hardhat": "^3.15.0"
-  }
+  "type": "module"
 }

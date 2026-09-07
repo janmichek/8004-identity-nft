@@ -1,0 +1,12 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+script = "script"
+solc_version = "0.8.24"
+
+[rpc_endpoints]
+mantleSepolia = "${RPC}"
+
+[etherscan]
+mantleSepolia = { key = "dummy", url = "https://api-sepolia.mantlescan.xyz/api" }

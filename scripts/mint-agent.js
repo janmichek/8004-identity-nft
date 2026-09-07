@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 import "dotenv/config";
 
-const REG = (process.env.IDENTITY_REGISTRY || "0x8004a818bfb912233c491871b3d84c89a494bd9e").replace(/^Ox/i, "0x");
+const REG = (process.env.IDENTITY_REGISTRY).replace(/^Ox/i, "0x");
 
 const ABI = [
   "function register(string) external returns (uint256)",
@@ -12,9 +12,8 @@ async function main() {
   const agentURI = process.env.AGENT_URI;
   if (!agentURI) throw new Error("AGENT_URI not set in .env");
 
-  const pk = process.env.PK.startsWith("0x") ? process.env.PK : "0x" + process.env.PK;
   const provider = new ethers.JsonRpcProvider(process.env.RPC);
-  const wallet = new ethers.Wallet(pk, provider);
+  const wallet = new ethers.Wallet(process.env.PK, provider);
   const contract = new ethers.Contract(REG, ABI, wallet);
 
   console.log(`Registering agent...`);
@@ -35,6 +34,9 @@ async function main() {
   if (agentId) {
     console.log(`🖼️  NFT: https://sepolia.mantlescan.xyz/nft/${REG}/${agentId}`);
     console.log(`🏷️  Token: https://sepolia.mantlescan.xyz/token/${REG}?a=${agentId}`);
+    console.log(`🔍 8004scan: https://testnet.8004scan.io/agents/mantle-sepolia/${agentId}`);
+  } else {
+    console.log(`🔍 8004scan: https://testnet.8004scan.io/agents/mantle-sepolia — search registry ${REG} / tx ${tx.hash}`);
   }
 }
 
